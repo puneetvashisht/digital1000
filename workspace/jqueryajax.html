@@ -1,0 +1,24 @@
+<html>
+<head></head>    
+<body>
+   <p id='p1' >AJAX - Asynch Javascript and XML/JSON</p>
+   <button id="b1">AJAX Demo</button> 
+    
+    <script src="libs/jquery-1.12.4.js"></script>
+    <script>
+        $('#b1').click(function(){
+                $.ajax({
+                url: 'dummy.json',
+                type: 'GET',
+                success: function(data){
+                    console.log('Recieved something')
+                    console.log(data);
+                    console.log(data.result);
+                }
+                })
+        })
+        
+        
+    </script>
+</body>
+</html>
