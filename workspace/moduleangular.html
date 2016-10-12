@@ -1,0 +1,28 @@
+<html>
+<head></head>    
+<body>
+    
+    <div ng-app="myApp">
+        <div ng-controller="myCtrl">
+             {{fruits}}
+        </div>
+       
+    </div>
+   
+   
+    <script src="libs/angular.js"></script>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        
+        app.controller('myCtrl', function($scope){
+            $scope.title = "Ms. "
+            $scope.fruits = ["apple", "oranges", "grapes"]
+        })
+        
+       
+    
+    </script>
+    
+</body>
+</html>

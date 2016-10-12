@@ -1,0 +1,43 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css"/>
+</head>    
+<body>
+    
+    <div ng-app="myApp">
+        <div ng-controller="myCtrl">
+            <input type="search" ng-model="search.name" placeholder="Search by name"/>
+            <input type="search" ng-model="search.department" placeholder="Search by department"/>
+            <input type="search" ng-model="search.$" placeholder="Search all"/>
+            
+            <table>
+                <tr ng-repeat="employee in employees | filter:search">
+                    <td>{{$index + 1}}</td>
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.department}}</td>
+                </tr>
+            </table>
+        </div>
+       
+    </div>
+   
+   
+    <script src="libs/angular.js"></script>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        
+        app.controller('myCtrl', function($scope){
+            $scope.employees = [
+        {id: 213, name: 'Ravi', department:'Accounts'},
+        {id: 123, name: 'Priya', department:'Finance'},                    
+        {id: 344, name: 'Aashna', department:'IT'}                      ]
+        })
+        
+       
+    
+    </script>
+    
+</body>
+</html>
