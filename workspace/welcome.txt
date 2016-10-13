@@ -1,0 +1,31 @@
+
+TRAINING AGENDA
+
+
+
+1.       HTML 5
+                    Localstorage, Websockets, SSE, Application Cache,
+                    Webworkers
+2.       CSS 3
+3.       Node JS
+            - basic
+4.       Angular JS (Yeoman, Grunt, Less/SAAS, Mongo DB)
+5.       Java Script
+6.       J Query
+
+
+UI Editors:
+    - Brackets IDE
+    - Sublime
+    - Webstorm by JetBrains
+    - Atom
+    - 
+
+
+
+    
+    HTML5
+    CSS3                                       NODEJS 
+    JavaScript
+    JQuery
+    AngularJS

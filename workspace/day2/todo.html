@@ -1,0 +1,43 @@
+<html>
+<head><title>To Do APP</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>   
+    
+    </head>
+<body>
+    
+    <div ng-app="todoApp" ng-controller="ToDoCtrl">
+        <input type="text" ng-model="todo" placeholder="Put a todo here"/>
+        <button ng-click="addToDo()">ADD</button>
+        <ul>
+            <li ng-repeat="todo in todos">{{todo}} <span class="glyphicon glyphicon-remove" ng-click="removeToDo($index)"></span></li>
+        </ul>
+    </div>
+
+    <script src="../libs/angular.js"></script>
+    
+    <script>
+        var app = angular.module('todoApp', []);
+        
+        app.controller('ToDoCtrl', function($scope){
+            $scope.todos = ['Task 1', 'Task 2', 'Task 3'];
+            
+            $scope.addToDo = function(){
+                console.log("Adding to todos array")
+                console.log($scope.todo)
+                $scope.todos.push($scope.todo)
+                $scope.todo = ""
+            }
+            
+            $scope.removeToDo = function(index){
+                console.log('Remote the item from the array')
+                console.log(index)
+                $scope.todos.splice(index,1);
+            }
+            
+        })
+        
+    </script>
+    
+</body>
+</html>

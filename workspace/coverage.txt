@@ -45,7 +45,13 @@ https://drive.google.com/drive/folders/0B1veE_ZZLHthRmNmNjdaazJnSFk?usp=sharing
 1. Text box - Add button
 2. Items appear as list items on the page
 3. Each item deleted
-4. Each item to be sorted.
+4. Each item to be sorted -- Missing right now. We will come back to htis
+
+
+Angular
+    - http (challenges)
+    - single page application
+    - custom tags - directives with angular
 
 
 
