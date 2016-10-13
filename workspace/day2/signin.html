@@ -1,0 +1,64 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css"/>
+</head>    
+<body>
+    
+    <div ng-app="myApp">
+        <div ng-controller="loginCtrl"> 
+            {{message}}
+            <input type="text" ng-model="user.name" placeholder="User Name"/>
+            <input ng-model="user.pwd" type="password"/>
+            <button ng-click="authenticate()">Sign In</button>
+            
+        </div>
+       
+    </div>
+   
+   
+    <script src="../libs/angular.js"></script>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        
+        app.controller('loginCtrl', function($scope, $http){
+            
+            $scope.authenticate = function(){
+                console.log($scope.user)
+                $http({
+                    url: 'http://127.0.0.1:59853/day2/dummyLogin.json',
+                    method: 'GET',
+                    data: $scope.user
+                    
+                }).success(function(data){
+                    console.log(data);
+                    if(data.auth){
+                        $scope.message = "You have logged in successfully"
+                    }
+                    else{
+                        $scope.message = "Invalid username/password"
+                    }
+                })
+            }
+            
+            /*$scope.loadData = function(){
+                $http({
+                    url : "dummy.json",
+                    method: 'GET'
+                }).success(function(data){
+                    console.log(data)
+                    $scope.employees = data;
+                })
+            }*/
+            
+            
+            
+//            $scope.employees = 
+        })
+        
+       
+    
+    </script>
+    
+</body>
+</html>
