@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>SPA PAge</title>
+</head>
+
+<body>
+    
+    <div ng-app="myApp">
+        <ng-view></ng-view>
+    </div>
+    <!--1. Angular Route Module Script
+    2. Module injection of ngRoute
+    3. ng-view
+    4. Config function of module to configure routes-->
+    
+    
+    <script src="../libs/angular.js"></script>
+    <script src="../libs/angular-route.js"></script>
+    
+    <script>
+        var app = angular.module('myApp', ['ngRoute'])
+        
+        app.config(function($routeProvider){
+            $routeProvider.when("/", {
+                templateUrl: 'partial/home.html',
+                controller: 'DateController'
+            }).when("/aboutus", {
+                templateUrl: 'partial/aboutus.html',
+                controller: 'DateController'
+            }).otherwise({
+//                template: "Error Page"
+                redirectTo: '/'
+            })
+        })
+        
+        app.controller("DateController", function($scope){
+            $scope.today = new Date();
+        })
+        
+    </script>
+    
+</body>
+</html>

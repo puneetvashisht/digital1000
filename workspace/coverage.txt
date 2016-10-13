@@ -50,9 +50,29 @@ https://drive.google.com/drive/folders/0B1veE_ZZLHthRmNmNjdaazJnSFk?usp=sharing
 
 Angular
     - http (challenges)
-    - single page application
+    - Exercise: Sign In Page: reponse hardcoded values in dummy.json
+        If authenticated: Show a success message
+        If authentication fails: Show a Invalid User/Password message
+    
     - custom tags - directives with angular
-
+        <notepad></notepad>
+        <input type="text" pv-datepicker ng-app ng-repeat>
+        Create custom directives
+        Using existing directives from Angular-UI-Boostrap / THrid party lib
+    
+    - single page application
+        What is SPA
+        Create SPA in AngularJS
+        
+    - Exercise:
+        1. Create a SPA 
+        2. Integrate this SPA app with Angular Ui Boostrap
+        3. Create four routes
+            a) Carousel
+            b) Accordian
+            c) Images with Ratings directive
+            d) Grid in Angular JS
+        
 
 
 
