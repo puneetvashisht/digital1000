@@ -1,13 +1,15 @@
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css"/>
+  
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> 
 </head>    
 <body>
     
     <div ng-app="myApp">
-        <pv-link></pv-link>
-        <pv-link></pv-link>
-        <pv-link></pv-link>
+        <pv-badge text="Inbox" count="4" step="2"></pv-badge>
+        <pv-badge text="Messages" count="6" step="-2"></pv-badge>
+        <pv-badge text="Sent" count="2" step="1"></pv-badge>
     </div>
    
    
@@ -19,8 +21,27 @@
         app.controller('loginCtrl', function($scope, $http){  
            
         })
+
+        app.directive('pvBadge', function(){
+            return {
+                templateUrl: 'partial/badge.html',
+                scope:  {
+                    text: '@text',
+                    count: '@count'
+                },
+                
+                link: function(scope, element, attrs){
+                    element.bind('click', function(){
+                        console.log('Badge clicked')
+                        scope.count = parseInt(scope.count) + parseInt(attrs.step);
+                        scope.$apply();
+                    })
+                }
+            }
+        })
         
-        app.directive('pvLink', function(){
+        
+         app.directive('pvLink', function(){
             return {
                 template: '<a href="http://www.google.com"/>Google Link</a>'
             }
