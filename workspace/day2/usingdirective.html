@@ -1,0 +1,46 @@
+<html>
+<head><title>To Do APP</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>   
+</head>
+<body>
+    
+    <div ng-app="myApp" ng-controller="AppCtrl">
+        Rating Directive<hr/>
+        You rated us: {{rate}}
+        <hr/>
+        <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+    
+    </div>
+    <!--1. Include script from ui-boostrap
+    2. Import another modules functionality into Angular
+    3. Include your component in the view
+    4. Provide controller properties that component needs-->
+    
+    <script src="../libs/angular.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+    <script>
+        var app = angular.module('myApp',['ui.bootstrap']);
+        
+        app.controller('AppCtrl', function($scope){
+          $scope.rate = 7;
+          $scope.max = 10;
+          $scope.isReadonly = false;
+
+          $scope.hoveringOver = function(value) {
+            $scope.overStar = value;
+            $scope.percent = 100 * (value / $scope.max);
+          };
+
+          $scope.ratingStates = [
+            {stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle'},
+            {stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'},
+            {stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle'},
+            {stateOn: 'glyphicon-heart'},
+            {stateOff: 'glyphicon-off'}
+          ];
+        })
+    
+    </script>
+</body>
+</html>
