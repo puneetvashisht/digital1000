@@ -82,7 +82,14 @@ Angular
         express.. rest
         tested using postman
         
+        MEAN - MongoDB, Express, AngularJS and NodeJS
+        Install Mongo DB Server  -- Document 
+        Mysql connection.. coversion from JS object to relationsal 
         
+        
+        MongoDB Integration steps:
+            1. Install MongoDB from https://www.mongodb.com/download-center?jmp=nav#community
+            2. Test DB installation
         
         
         
