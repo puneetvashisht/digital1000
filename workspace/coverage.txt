@@ -72,6 +72,26 @@ Angular
             b) Accordian
             c) Images with Ratings directive
             d) Grid in Angular JS
+            
+    - NodeJS
+        write simple nodejs program
+        file module.. read file in synch and asynch mode
+        http module.. create a static file server
+        express.. external module.. web framework
+        npm.. some npm commands
+        express.. rest
+        tested using postman
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
 
 
