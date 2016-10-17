@@ -18,7 +18,20 @@
         $routeProvider.when("/newPoll", {
             templateUrl: 'survey/views/newPoll.html',
             controller: 'PollNewCtrl'
+        }).when("/polls", {
+            templateUrl: 'survey/views/polls.html',
+            controller: 'PollListCtrl'
         })
+    })
+    
+    app.controller('PollListCtrl', function($scope,$http){
+        $http({
+                url: '/polls',
+                method: 'GET',
+            }).success(function(data){
+                console.log(data);
+                $scope.polls = data
+            })
     })
     app.controller('PollNewCtrl', function($scope, $http){
         $scope.poll = {

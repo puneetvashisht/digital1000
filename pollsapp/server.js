@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
-var dbInsert = require('./pollsdb')
+var pollsdb = require('./pollsdb')
 
 
 
@@ -19,11 +19,18 @@ app.get('/', function (req, res) {
   res.send('Hello World')
 })
 
-app.post('/polls', function(req,res){
+app.get('/polls', function(req,res){  
+    pollsdb.dbFetchAll(function(polls){
+        res.json(polls)
+    });
+    // Some issues with this.
     
+})
+
+app.post('/polls', function(req,res){  
     // Parse the body and extract JSON
     console.log(req.body);
-    dbInsert(req.body);
+    pollsdb.dbInsert(req.body);
     var obj = {success:true};
     res.json(obj)
 })

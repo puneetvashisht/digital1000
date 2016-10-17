@@ -15,4 +15,5 @@ POLLS APP GUIDE
 4. Fetch all questions from DB and display the question text
     in a list format. Also create a search box around the list
     
+    MEAN - MongoDB, Express, Angular, NodeJS
  

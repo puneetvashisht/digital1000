@@ -1,0 +1,9 @@
+<div class="page-header">
+    <h1>View All Polls</h1>
+</div>
+<div>
+    <input type="search" ng-model="search.question" placeholder="Search Poll"/>
+    <ul>
+        <li ng-repeat="poll in polls | filter: search"><a href="#">{{poll.question}}</a></li>
+    </ul>
+</div>
