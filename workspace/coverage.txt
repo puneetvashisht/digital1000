@@ -89,7 +89,28 @@ Angular
         
         MongoDB Integration steps:
             1. Install MongoDB from https://www.mongodb.com/download-center?jmp=nav#community
-            2. Test DB installation
+            2. Test DB installation (mongod --version)
+            3. Run the database
+                a) Create a directory (data)
+                b) mongod --dbpath data
+            4. Test the current instance (mongo)
+            5. Write a Nodejs program to connect to DB
+                a) Driver to connect to mongo (NPM)
+                b) npm install mongodb --save
+            6. NodeJS program to insert records to DB
+            7. db.collection.find()
+            
+        NodeJS - MongoDB
+        
+        
+        Day 4
+        
+        Do a project - Survey Application
+        Please make yourself ready with 
+            - Brackets IDE
+            - NodeJS
+            - NPM working behind proxy
+            - MongoDB
         
         
         

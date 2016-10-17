@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Polls App</title>
+    
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body ng-app="pollsApp">
+    
+<div ng-view></div>
+<script src="libs/angular.js"></script>  
+<script src="libs/angular-route.js"></script>  
+
+<script>
+    var app = angular.module('pollsApp', ['ngRoute']);
+    app.config(function($routeProvider){
+        $routeProvider.when("/newPoll", {
+            templateUrl: 'survey/views/newPoll.html',
+            controller: 'PollNewCtrl'
+        })
+    })
+    app.controller('PollNewCtrl', function($scope){
+        $scope.poll = {
+            question: 'Sample Question',
+            choices: [{text: 'Choice 1'}, {text:'Choice 2'}]
+        }
+        
+        $scope.addChoice = function(){
+            $scope.poll.choices.push({text: 'New Choice'})
+        }
+        
+        $scope.createPoll = function(){
+            console.log($scope.poll)
+        }
+    })
+    
+</script>    
+</body>    
+</html>
