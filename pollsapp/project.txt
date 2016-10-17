@@ -2,6 +2,17 @@ POLLS APP GUIDE
 
 1. Create Poll view which can send polls info
     console.log(data) on backend
-2. Create a NODE Js backend to consume information form poll view page and print it onto console.    
+2. Create a NODE Js backend to consume information from poll view page and print it onto console.  
+3. Inserting this poll into the DB - MongoDB
+20 minutes 
+    a) Get DB started
+    b) Mongo DB Driver
+    c) Script to insert sample poll data to DB
+    { question: 'Our own  question',
+  choices: [ { text: 'And 1' }, { text: 'Ans 2' }, { text: 'Ans 31' } ] }
+    d) Wire up Node and DB script
+    
+4. Fetch all questions from DB and display the question text
+    in a list format. Also create a search box around the list
     
  
