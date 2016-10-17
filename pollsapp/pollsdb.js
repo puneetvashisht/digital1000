@@ -39,6 +39,7 @@ db.open(function (error) {
 //                    write this polls obj to the response
                 })
             }
+            db.close();
         });
 
         
@@ -63,7 +64,8 @@ db.open(function (error) {
         collection.insert( obj, function () {
             console.log("Successfully inserted one sample poll");
         });
-
+        
+        db.close();
         
        
     });

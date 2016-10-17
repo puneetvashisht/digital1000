@@ -1,0 +1,16 @@
+
+<div class="well well-lg">
+    <strong>Question</strong>
+    <br>
+    {{poll.question}}
+    
+    <div ng-repeat="choice in poll.choices" class="radio">
+        <input type="radio" name="choice"> {{choice.text}}
+        
+    </div>
+</div>
+
+
+
+
+

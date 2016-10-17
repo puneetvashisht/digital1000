@@ -21,16 +21,33 @@
         }).when("/polls", {
             templateUrl: 'survey/views/polls.html',
             controller: 'PollListCtrl'
+        }).when('/poll/:id', {
+            templateUrl: 'survey/views/poll.html',
+            controller: 'PollCtrl'
         })
     })
     
     app.controller('PollListCtrl', function($scope,$http){
+        console.log('Initialized..');
         $http({
                 url: '/polls',
                 method: 'GET',
             }).success(function(data){
                 console.log(data);
                 $scope.polls = data
+            })
+    })
+    
+    app.controller('PollCtrl', function($scope,$http,$routeParams){
+        console.log('Initialized..');
+        console.log($routeParams.id);
+        var pollurl = '/poll/' + $routeParams.id
+        $http({
+                url: pollurl,
+                method: 'GET',
+            }).success(function(data){
+                console.log(data);
+                $scope.poll = data
             })
     })
     app.controller('PollNewCtrl', function($scope, $http){

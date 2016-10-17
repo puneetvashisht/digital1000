@@ -4,6 +4,6 @@
 <div>
     <input type="search" ng-model="search.question" placeholder="Search Poll"/>
     <ul>
-        <li ng-repeat="poll in polls | filter: search"><a href="#">{{poll.question}}</a></li>
+        <li ng-repeat="poll in polls | filter: search"><a href="#/poll/{{poll._id}}">{{poll.question}}</a></li>
     </ul>
 </div>
