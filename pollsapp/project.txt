@@ -1,0 +1,7 @@
+POLLS APP GUIDE
+
+1. Create Poll view which can send polls info
+    console.log(data) on backend
+2. Create a NODE Js backend to consume information form poll view page and print it onto console.    
+    
+ 

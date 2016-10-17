@@ -20,7 +20,7 @@
             controller: 'PollNewCtrl'
         })
     })
-    app.controller('PollNewCtrl', function($scope){
+    app.controller('PollNewCtrl', function($scope, $http){
         $scope.poll = {
             question: 'Sample Question',
             choices: [{text: 'Choice 1'}, {text:'Choice 2'}]
@@ -32,6 +32,14 @@
         
         $scope.createPoll = function(){
             console.log($scope.poll)
+            
+            $http({
+                url: '/polls',
+                method: 'POST',
+                data: $scope.poll
+            }).success(function(data){
+                console.log(data);
+            })
         }
     })
     
